@@ -51,18 +51,10 @@ while q:
 ret = 0
 for i in range(len(lines)):
     for j in range(len(lines[0])):
-        if spacious[i*2][j*2] == 0 and spacious[i*2+1][j*2] == 0 and spacious[i*2][j*2+1] == 0 and spacious[i*2+1][j*2+1] == 0:
+        if not any((spacious[i*2][j*2], spacious[i*2+1][j*2], spacious[i*2][j*2+1], spacious[i*2+1][j*2+1])):
             ret += 1
             dists[i][j] = 0
 
-# for line in dists:
-#     for x in line:
-#         print(x, '\t', end='')
-#     print()
-# for line in spacious:
-#     for x in line:
-#         print(x, '\t', end='')
-#     print()
 print (ret)
 
 
